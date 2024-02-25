@@ -1,42 +1,114 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Space+Mono&display=swap');
+
+#root{
+  margin: 0 0 0 0;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #e4e4e4;
+  background-image: url("./assets/farm.jpg");
+  background-size: cover;
+  overflow-y: hidden;
+}
+
+
+#chatbox{
+  background-image: linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url("./assets/farm.png");
+  overflow-y: scroll;
+}
+
+#text-area{
+  bottom: 1%;
   text-align: center;
+  font-size: 1.2rem;
+  background-color: #ededed;
+  height: 50px;
+  max-height: 500px;
+
+}
+#text-area:focus{
+  outline: 0px !important;
+}
+#navbar{
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logo{
+  height: 2.5rem;
+}
+#sidepanel{
+  background-color: #ececec;
+}
+#newchat{
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#newchat:hover{
+  background-color: #e4e4e4;
+  cursor: pointer;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#accountinfo{
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+#accountinfo:hover{
+  background-color: #e4e4e4;
+  cursor: pointer;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#message{
+  padding: 7px 7px 7px 7px;
+  border-radius: 8px;
+  margin: 15px 15px 60px 15px;
+  max-width: 50%;
+  white-space: pre-wrap;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sent{
+  background-color: #8400ff;
+  color: white;
+  float: right;
 }
 
-.card {
-  padding: 2em;
+.recieved{
+  background-color: #cdcdcd;
+  color: black;
+  float: left;
+}
+.loading-spinner {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px solid #8400ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scroll thumb */
+  border-radius: 6px; /* Rounded corners of the thumb */
+  border: 3px solid #f1f1f1; /* Border around the thumb */
 }
